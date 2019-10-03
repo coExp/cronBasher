@@ -14,5 +14,5 @@ else
 fi
 
 # Launch your command while job to do
-launchUntilScript './example/random.sh'
+launchUntilScript './example/random.sh' 'stuff(s) done!'
 exit $?

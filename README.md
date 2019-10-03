@@ -22,6 +22,7 @@ Set PATH_CRON_BASHER into `/etc/crontab` and the line :
 ```
 * * * * *   www-data  cd PATH_CRON_BASHER && ./simple_command.sh
 ```
+This command use function `launchScript`. The first argument is a string with the command to run.
 
 Recursive command
 -----------------
@@ -29,6 +30,7 @@ The way of recusive command, is to launch again the command if an action has bee
 ```
 * * * * *   www-data  cd PATH_CRON_BASHER && ./recursive_command.sh
 ```
+This command use function `launchUntilScript`. The first argument is a string with the command to run, the seond one is a message to print with the number of stuffs done.
 
 Send log to Datadog
 -------------------
