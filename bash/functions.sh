@@ -8,13 +8,13 @@ START_DATE=$(date --iso-8601=ns)
 #   To easy launch command in cron, and log there results, follow these steps:
 #
 #   - Configure these variables into your script:
-#       PID_FILE="./jobs/pids/<command_name>.pid"
-#       LOG_FILE="./var/logs/cron_<command_name>>.log"
+#       PID_FILE="./pids/<command_name>.pid"
+#       LOG_FILE="./logs/cron_<command_name>>.log"
 #       DATADOG_TAGS="tags,to,send,to,datadog"
 #
 #   - Import into your script this file with:
-#       if [ -f ./jobs/bash/functions.sh ]; then
-#         . ./jobs/bash/functions.sh
+#       if [ -f ./bash/functions.sh ]; then
+#         . ./bash/functions.sh
 #       else
 #         echo "Cannot find file \`function.sh\`. Please run into the symfony project."
 #         exit 1
@@ -33,10 +33,10 @@ START_DATE=$(date --iso-8601=ns)
 #
 # EXAMPLES
 #   Launch simple command
-#   @see ./jobs/generate_synctag.sh
+#   @see ./simple_command.sh
 #
 #   Launch command while work to do
-#   @see ./jobs/register_event.sh
+#   @see ./recursive_command.sh
 # ----------------------------------------------------------------------------------
 
 # Launch the command and handle returns
