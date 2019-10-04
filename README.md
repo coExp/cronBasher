@@ -5,7 +5,7 @@ cronBasher helps you to launch command from cron and handle environment variable
 
 Environment variables
 --------------------
-PATH_CRON_BASHER: Path to cronBasher project. Set this variable into `/etc/crontab`
+PATH_CRON_BASHER: Path to cronBasher project. Set this variable into `/etc/crontab`    
 DATADOG_URL: URL to log to Datadog. Keep empty to not send log         
 DATADOG_APP_API_KEY: your Datadog APP key           
 ENVIRONMENT: working environment           
@@ -38,4 +38,4 @@ Send all error log to Datadog
 
 Right
 -----
-Do not forget to add the `executable` right on your script.
+Do not forget to add the `executable` right to your scripts.
