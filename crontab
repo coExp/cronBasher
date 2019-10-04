@@ -1,0 +1,28 @@
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+# need: - apt-get install cron
+#       - chmod +x .../jobs/your_scrip.sh
+#       - service cron start
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Set path to your own symfony project (default: /var/www/symfony):
+PATH_CRON_BASHER=/home/user/cronBasher
+DATADOG_URL=https://http-intake.logs.datadoghq.com/v1/input/
+
+# m h dom mon dow user  command
+17 *    * * *   root    cd / && run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+
+#### LAUNCH YOU SCRIPT HERE ####
+
+#           user      command
+* * * * *   www-data  cd PATH_CRON_BASHER && ./simple_command.sh
+* * * * *   www-data  cd PATH_CRON_BASHER && ./recursive_command.sh
